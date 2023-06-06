@@ -1,0 +1,19 @@
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  &-img {
+    width: 150px;
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    margin-bottom: 37px;
+
+    &-img {
+      width: 100px;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@import '../../../../../scss/variables.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+
+  &-label {
+    color: $color-white;
+    margin-top: 24px;
+  }
+
+  &-input {
+    width: 350px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: $color-black;
+    color: $color-white;
+    text-align: center;
+
+    &:focus {
+      border: 4px solid $color-white;
+    }
+  }
+
+  &-email {
+      background: url('../../../../../assets/images/Email.svg') no-repeat;
+      background-position: 10px;
+      background-size: 34px;
+
+      &::placeholder {
+        padding: 10px 10px;
+      }
+  }
+
+  &-password {
+    background: url('../../../../../assets/images/Password.svg') no-repeat;
+    background-position: 10px;
+    background-size: 34px;
+
+    &::placeholder {
+      padding: 10px 10px;
+    }
+  }
+
+  &-validation {
+
+    &-desc {
+      margin-top: 8px;
+      color: $color-white;
+    }
+  }
+
+  &-wrong-user {
+    text-align: center;
+
+    &-desc {
+      margin-top: 8px;
+      color: $color-white;
+    }
+  }
+
+  &-forget-password {
+    text-align: right;
+    margin: 10px 0;
+    color: $color-blue;
+    transition: 0.3s;
+
+    &:hover {
+      color: $color-light-blue;
+    }
+  }
+}

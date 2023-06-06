@@ -1,0 +1,37 @@
+<form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()" #formDir="ngForm">
+  <label class="form-label" for="email">Email</label>
+  <input
+    class="form-input form-email"
+    type="email"
+    name="email"
+    placeholder="Digite seu Email"
+    formControlName="email"
+    required
+  >
+  <div class="form-validation" *ngIf="email.invalid && formDir.submitted && showValidation" class="validation-error">
+    <p class="form-validation-desc" *ngIf="email.errors?.['required']">O email é obrigatório!</p>
+    <p class="form-validation-desc" *ngIf="email.errors?.['email']">Digite um endereço correto de email</p>
+  </div>
+  <label class="form-label" for="password">Senha</label>
+  <input
+    class="form-input form-password"
+    type="password"
+    name="password"
+    placeholder="Digite sua senha"
+    formControlName="password"
+    required
+  >
+  <div class="form-validation" *ngIf="password.invalid && formDir.submitted && showValidation" class="validation-error">
+    <p class="form-validation-desc" *ngIf="password.errors?.['required']">A senha é obrigatória!</p>
+    <p class="form-validation-desc" *ngIf="password.errors?.['minlength']">A senha deve ter no mínimo 6 caracteres!</p>
+  </div>
+  <div class="form-wrong-user" *ngIf="wrongUserInfo">
+    <p class="form-wrong-user-desc">A senha ou o e-mail estão incorretos!</p>
+  </div>
+  <a class="form-forget-password" href="#">Esqueceu sua senha?</a>
+  <app-button
+    type="submit"
+    [btnName]=" isSubmitting ? 'Logging in...' : 'Log In'"
+  >
+</app-button>
+</form>

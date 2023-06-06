@@ -1,0 +1,39 @@
+
+.footer {
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+
+  &-img {
+    display: flex;
+    justify-content: space-between;
+
+    &-circle {
+      width: 150px;
+    }
+
+    &-square {
+      width: 150px;
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .footer {
+
+    &-img {
+      display: flex;
+      justify-content: space-between;
+
+      &-circle {
+        width: 100px;
+      }
+
+      &-square {
+        width: 100px;
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
