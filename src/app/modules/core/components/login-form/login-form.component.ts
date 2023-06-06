@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { AuthServiceService } from '../../services/auth-service.service';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-login-form',
@@ -35,7 +34,7 @@ export class LoginFormComponent {
 
     onSubmit(): void {
 
-      if (this.loginForm.invalid) {
+      if ( this.loginForm.invalid ) {
         this.showValidation = true
         setTimeout(() => {
           this.showValidation = false
